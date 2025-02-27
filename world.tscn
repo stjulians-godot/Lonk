@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccu5y3qkydpj5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jd6bn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7utbp"]
+radius = 21.0
+height = 58.0
+
+[node name="world" type="Node2D"]
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(534, 527)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+shape = SubResource("WorldBoundaryShape2D_jd6bn")
+
+[node name="Lonk" type="CharacterBody2D" parent="."]
+position = Vector2(532, 349)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lonk"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lonk"]
+shape = SubResource("CapsuleShape2D_7utbp")
